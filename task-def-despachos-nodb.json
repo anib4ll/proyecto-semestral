@@ -1,0 +1,24 @@
+﻿{
+  "family": "backend-despachos-task-nodb",
+  "networkMode": "awsvpc",
+  "requiresCompatibilities": ["FARGATE"],
+  "cpu": "256",
+  "memory": "512",
+  "executionRoleArn": "arn:aws:iam::571440187930:role/LabRole",
+  "taskRoleArn": "arn:aws:iam::571440187930:role/LabRole",
+  "containerDefinitions": [
+    {
+      "name": "backend-despachos",
+      "image": "571440187930.dkr.ecr.us-east-1.amazonaws.com/proyectosemestral-backend-despachos:latest",
+      "portMappings": [{"containerPort": 8081, "protocol": "tcp"}],
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "/ecs/backend-despachos",
+          "awslogs-region": "us-east-1",
+          "awslogs-stream-prefix": "ecs"
+        }
+      }
+    }
+  ]
+}

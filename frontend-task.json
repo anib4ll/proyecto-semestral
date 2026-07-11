@@ -1,0 +1,8 @@
+[
+  {
+    "name": "frontend",
+    "image": "valutorres/frontend:latest",
+    "essential": true,
+    "portMappings": [{"containerPort": 80, "protocol": "tcp"}]
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "name": "mysql",
+    "image": "mysql:8.0",
+    "essential": true,
+    "portMappings": [{"containerPort": 3306, "protocol": "tcp"}],
+    "environment": [
+      {"name": "MYSQL_ROOT_PASSWORD", "value": "rootpassword"},
+      {"name": "MYSQL_DATABASE", "value": "ventas_db"},
+      {"name": "MYSQL_USER", "value": "admin"},
+      {"name": "MYSQL_PASSWORD", "value": "Admin123456"}
+    ],
+    "healthCheck": {
+      "command": ["CMD", "mysqladmin", "ping", "-h", "localhost"],
+      "interval": 30,
+      "timeout": 10,
+      "retries": 3
+    }
+  }
+]
